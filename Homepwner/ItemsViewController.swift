@@ -8,7 +8,7 @@ class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
  
-    @IBAction func addNewItem(_ sender: UIButton)
+    @IBAction func addNewItem(_ sender: UIBarButtonItem)
     {
         // Create a new Item and add it to the store
         let newItem = itemStore.createItem()
@@ -22,24 +22,14 @@ class ItemsViewController: UITableViewController {
         }
     }
     
-    @IBAction func toggleEditingMode(_ sender: UIButton)
+    required init?(coder aDecoder: NSCoder)
     {
-        // If you are currently in editing mode...
-        if isEditing {
-            // Change text of button to inform user of state
-            sender.setTitle("Edit", for: .normal)
-            
-            // Turn off editing mode
-            setEditing(false, animated: true)
-        } else {
-            // Change text of button to inform user of state
-            sender.setTitle("Done", for: .normal)
-            
-            // Enter editing mode
-            setEditing(true, animated: true)
-        }
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
+    // Added From Book
     override func prepare(for seque: UIStoryboardSegue, sender: Any?)
     {
         // If the triggered segue is the "showItem" segue
@@ -59,6 +49,14 @@ class ItemsViewController: UITableViewController {
         }
     }
 
+    // Added From Book
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     // The overall View of the controller
     override func viewDidLoad()
     {
@@ -67,13 +65,6 @@ class ItemsViewController: UITableViewController {
         // Adds the background image to the view
         tableView.backgroundView = UIImageView(image: UIImage(named: "background.jpg")!)
         tableView.backgroundView?.contentMode = .scaleAspectFit // Fits it to the screen correctly
-        
-        // Get the height of the status bar
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
