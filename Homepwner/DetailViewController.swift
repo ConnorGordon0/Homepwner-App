@@ -52,6 +52,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate
     {
         super.viewWillAppear(animated)
         
+        
         nameField.text = item.name
         serialNumberField.text = item.serialNumber
         valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
