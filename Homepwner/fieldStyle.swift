@@ -9,17 +9,3 @@
 import UIKit
 import Foundation
 
-class fieldStyle: UITextField
-{
-    override func becomeFirstResponder() -> Bool
-    {
-        self.borderStyle = UITextBorderStyle.line
-        return true
-    }
-
-    override func resignFirstResponder() -> Bool
-    {
-        self.borderStyle = UITextBorderStyle.roundedRect
-        return true
-    }
-}
