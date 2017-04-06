@@ -71,14 +71,17 @@
                     <navigationItem key="navigationItem" title="Homepwner" id="c7L-MP-dN4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jil-VT-2t9">
                             <connections>
-                                <action selector="addNewItem:" destination="66W-v5-HZ5" id="Tft-k3-42r"/>
+                                <segue destination="udF-uM-CTg" kind="show" identifier="createItem" id="XC4-2e-Gtc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="createItem" destination="Jil-VT-2t9" id="See-Zd-bxq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EN-KN-ldg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1256.8" y="361.16941529235385"/>
+            <point key="canvasLocation" x="1121" y="406"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="s4M-ew-aZM">
@@ -92,19 +95,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1By-iu-vm9">
-                                <rect key="frame" x="16" y="623" width="343" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="7NA-63-Mp2"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem systemItem="camera" id="iFc-aF-Tpq">
-                                        <connections>
-                                            <action selector="takePicture:" destination="udF-uM-CTg" id="ni7-a4-QD5"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mjP-l8-EHG">
                                 <rect key="frame" x="16" y="72" width="343" height="543"/>
                                 <subviews>
@@ -115,52 +105,55 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOH-5v-Jdb" userLabel="Name">
-                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sjf-Y7-gX0" customClass="textClass" customModule="Homepwner" customModuleProvider="target">
-                                                        <rect key="frame" x="53" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="48.5" y="0.0" width="294.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
+                                                <variation key="heightClass=compact" axis="vertical"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kvp-Mv-eJc" userLabel="Serial Stack View">
                                                 <rect key="frame" x="0.0" y="38" width="343" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyg-Mh-PoW" userLabel="Serial">
-                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fe9-50-HeZ" customClass="textClass" customModule="Homepwner" customModuleProvider="target">
-                                                        <rect key="frame" x="53" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="48.5" y="0.0" width="294.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
+                                                <variation key="heightClass=compact" axis="vertical"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cUX-hY-dZE" userLabel="Value Stack View">
                                                 <rect key="frame" x="0.0" y="76" width="343" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFt-XD-sdT" userLabel="Value">
-                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fPP-mM-QVZ" customClass="textClass" customModule="Homepwner" customModuleProvider="target">
-                                                        <rect key="frame" x="53" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="48.5" y="0.0" width="294.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                 </subviews>
+                                                <variation key="heightClass=compact" axis="vertical"/>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYp-E9-O6j" userLabel="Date Created">
                                                 <rect key="frame" x="0.0" y="114" width="343" height="20.5"/>
@@ -180,6 +173,30 @@
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="fillEqually"/>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1By-iu-vm9">
+                                <rect key="frame" x="16" y="623" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7NA-63-Mp2"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="iFc-aF-Tpq">
+                                        <connections>
+                                            <action selector="takePicture:" destination="udF-uM-CTg" id="ni7-a4-QD5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Clear" width="91.5" style="plain" id="HHs-87-fnI">
+                                        <connections>
+                                            <action selector="deletePhoto:" destination="udF-uM-CTg" id="VSq-qi-vpX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Change Date" width="181" style="plain" id="6H0-I8-yeA">
+                                        <connections>
+                                            <action selector="changeDate:" destination="udF-uM-CTg" id="oiA-Pc-64Z"/>
+                                            <segue destination="0Rs-8l-fcD" kind="show" identifier="showDate" id="I3B-Ci-aQ2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -211,7 +228,38 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="316" y="1099.7001499250375"/>
+            <point key="canvasLocation" x="682" y="1268"/>
+        </scene>
+        <!--changeDate-->
+        <scene sceneID="edS-SJ-2eb">
+            <objects>
+                <viewController storyboardIdentifier="changeDate" title="changeDate" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Rs-8l-fcD" customClass="datePickerViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cga-i4-pCe"/>
+                        <viewControllerLayoutGuide type="bottom" id="vi9-We-xHW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EH0-yz-wDR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3Vu-Dp-L7r">
+                                <rect key="frame" x="0.0" y="213" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="513137498.53538603">
+                                    <!--2017-04-06 02:11:38 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83504894776622751" green="0.93521438591403505" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jdY-wU-KH7"/>
+                    <connections>
+                        <outlet property="datePicker" destination="3Vu-Dp-L7r" id="fs7-hQ-vii"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DVF-2s-cXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1446" y="1268"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fyy-MT-nTh">
@@ -229,7 +277,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gt-9h-D4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="317.60000000000002" y="361.16941529235385"/>
+            <point key="canvasLocation" x="316" y="406"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="XC4-2e-Gtc"/>
+    </inferredMetricsTieBreakers>
 </document>

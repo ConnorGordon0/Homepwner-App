@@ -45,16 +45,16 @@ class ItemStore
         // Insert item in array at new location
         allItems.insert(movedItem, at: toIndex)
     }
-    
+  
     @discardableResult func createItem() -> Item
     {
-        let newItem = Item(random: true)
+       let newItem = Item(create: true)
         
         allItems.append(newItem)
         
         return newItem
     }
-    
+ 
     func removeItem(_ item: Item) {
         if let index = allItems.index(of: item)
         {

@@ -25,6 +25,28 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     var imageStore: ImageStore!
     
+    // Performs the Segue into the dateChange viewController.
+    @IBAction func changeDate(_ sender: UIBarButtonItem)
+    {
+        performSegue(withIdentifier: "showDate", sender: changeDate)
+    }
+    
+    // Passes the Date data to the next view controller to be changed
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "showDate"
+        {
+            let toViewController = segue.destination as! datePickerViewController
+            toViewController.item = item
+        }
+    }
+    
+    // Delete a photo from the object
+    @IBAction func deletePhoto(_ sender: UIBarButtonItem)
+    {
+        imageView.image = nil
+    }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
@@ -51,8 +73,19 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         if UIImagePickerController.isSourceTypeAvailable(.camera)
         {
             imagePicker.sourceType = .camera
-        } else {
+            
+            // Camera Overlay
+            let customViewController = CustomOverlayViewController(nibName: "CustomOverlayViewController", bundle: nil)
+            let customView:CustomOverlayview = customViewController.view as! CustomOverlayview
+            customView.frame = imagePicker.view.frame
+            present(imagePicker, animated: true, completion: {imagePicker.cameraOverlayView = customView})
+            
+            print("Using on board Camera")
+        }
+        else
+        {
             imagePicker.sourceType = .photoLibrary
+            print("Using Photo Library")
         }
         
         imagePicker.delegate = self
@@ -91,7 +124,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        
         
         nameField.text = item.name
         serialNumberField.text = item.serialNumber

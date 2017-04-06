@@ -13,6 +13,19 @@
 		1D53B0021E88C3D900B5ED52 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D53AFFF1E88C33C00B5ED52 /* DetailViewController.swift */; };
 		1D53B0031E88C3FB00B5ED52 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64C1221B84C9C900288BE3 /* Item.swift */; };
 		1D53B0041E88C3FC00B5ED52 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64C1221B84C9C900288BE3 /* Item.swift */; };
+		1D9E47671E95BF5000F01549 /* CustomOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E47651E95BF5000F01549 /* CustomOverlayViewController.swift */; };
+		1D9E47681E95BF5000F01549 /* CustomOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D9E47661E95BF5000F01549 /* CustomOverlayViewController.xib */; };
+		1D9E476A1E95BF8600F01549 /* CustomOverlayview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E47691E95BF8600F01549 /* CustomOverlayview.swift */; };
+		1D9E47701E95C2FE00F01549 /* cross-hair-png-clipart-best-clipart-best-RvyiNi-clipart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9E476F1E95C2FE00F01549 /* cross-hair-png-clipart-best-clipart-best-RvyiNi-clipart.png */; };
+		1D9E47711E95C38D00F01549 /* CustomOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E47651E95BF5000F01549 /* CustomOverlayViewController.swift */; };
+		1D9E47741E95C39200F01549 /* CustomOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E47651E95BF5000F01549 /* CustomOverlayViewController.swift */; };
+		1D9E47751E95C42D00F01549 /* CustomOverlayview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E47691E95BF8600F01549 /* CustomOverlayview.swift */; };
+		1D9E47761E95C42E00F01549 /* CustomOverlayview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E47691E95BF8600F01549 /* CustomOverlayview.swift */; };
+		1D9E47771E95C46200F01549 /* CustomOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D9E47661E95BF5000F01549 /* CustomOverlayViewController.xib */; };
+		1D9E47781E95C46200F01549 /* CustomOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D9E47661E95BF5000F01549 /* CustomOverlayViewController.xib */; };
+		1D9E477A1E95DB8400F01549 /* datePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E47791E95DB8400F01549 /* datePickerViewController.swift */; };
+		1D9E477B1E95DB8400F01549 /* datePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E47791E95DB8400F01549 /* datePickerViewController.swift */; };
+		1D9E477C1E95DB8400F01549 /* datePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E47791E95DB8400F01549 /* datePickerViewController.swift */; };
 		1DF314EC1E9345F000043B44 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF314EB1E9345F000043B44 /* ImageStore.swift */; };
 		1DF314ED1E93476300043B44 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF314EB1E9345F000043B44 /* ImageStore.swift */; };
 		1DF314EE1E93476400043B44 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF314EB1E9345F000043B44 /* ImageStore.swift */; };
@@ -48,6 +61,11 @@
 /* Begin PBXFileReference section */
 		1D4B31AE1E7F919900172FE1 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../Desktop/background.jpg; sourceTree = "<group>"; };
 		1D53AFFF1E88C33C00B5ED52 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1D9E47651E95BF5000F01549 /* CustomOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomOverlayViewController.swift; path = ../CustomOverlayViewController.swift; sourceTree = "<group>"; };
+		1D9E47661E95BF5000F01549 /* CustomOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomOverlayViewController.xib; path = ../CustomOverlayViewController.xib; sourceTree = "<group>"; };
+		1D9E47691E95BF8600F01549 /* CustomOverlayview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayview.swift; sourceTree = "<group>"; };
+		1D9E476F1E95C2FE00F01549 /* cross-hair-png-clipart-best-clipart-best-RvyiNi-clipart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cross-hair-png-clipart-best-clipart-best-RvyiNi-clipart.png"; path = "../../../Desktop/cross-hair-png-clipart-best-clipart-best-RvyiNi-clipart.png"; sourceTree = "<group>"; };
+		1D9E47791E95DB8400F01549 /* datePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = datePickerViewController.swift; path = ../datePickerViewController.swift; sourceTree = "<group>"; };
 		1DF314EB1E9345F000043B44 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		6B64C0EF1B84C7C300288BE3 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B64C0F21B84C7C300288BE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DA454051E95ED7D00D13B8C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				1D4B31AE1E7F919900172FE1 /* background.jpg */,
+				1D9E476F1E95C2FE00F01549 /* cross-hair-png-clipart-best-clipart-best-RvyiNi-clipart.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		6B64C0E61B84C7C300288BE3 = {
 			isa = PBXGroup;
 			children = (
@@ -116,17 +143,21 @@
 			isa = PBXGroup;
 			children = (
 				6B64C0F21B84C7C300288BE3 /* AppDelegate.swift */,
-				6B64C0F61B84C7C300288BE3 /* Main.storyboard */,
-				6B64C0F91B84C7C300288BE3 /* Assets.xcassets */,
-				6B64C0FB1B84C7C300288BE3 /* LaunchScreen.storyboard */,
 				6B64C0FE1B84C7C300288BE3 /* Info.plist */,
+				6B64C0F61B84C7C300288BE3 /* Main.storyboard */,
+				6B64C0FB1B84C7C300288BE3 /* LaunchScreen.storyboard */,
+				6B64C0F91B84C7C300288BE3 /* Assets.xcassets */,
+				1D9E47651E95BF5000F01549 /* CustomOverlayViewController.swift */,
+				1D9E47661E95BF5000F01549 /* CustomOverlayViewController.xib */,
+				1D9E47691E95BF8600F01549 /* CustomOverlayview.swift */,
+				1D9E47791E95DB8400F01549 /* datePickerViewController.swift */,
+				1D53AFFF1E88C33C00B5ED52 /* DetailViewController.swift */,
 				6B64C1201B84C8EB00288BE3 /* ItemsViewController.swift */,
 				6B64C1221B84C9C900288BE3 /* Item.swift */,
-				6B64C1241B84CB3F00288BE3 /* ItemStore.swift */,
-				1D53AFFF1E88C33C00B5ED52 /* DetailViewController.swift */,
-				1DF314EB1E9345F000043B44 /* ImageStore.swift */,
 				6B64C1261B86265900288BE3 /* ItemCell.swift */,
-				1D4B31AE1E7F919900172FE1 /* background.jpg */,
+				6B64C1241B84CB3F00288BE3 /* ItemStore.swift */,
+				1DF314EB1E9345F000043B44 /* ImageStore.swift */,
+				1DA454051E95ED7D00D13B8C /* images */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -259,6 +290,8 @@
 				1D4B31AF1E7F919900172FE1 /* background.jpg in Resources */,
 				6B64C0FA1B84C7C300288BE3 /* Assets.xcassets in Resources */,
 				6B64C0F81B84C7C300288BE3 /* Main.storyboard in Resources */,
+				1D9E47681E95BF5000F01549 /* CustomOverlayViewController.xib in Resources */,
+				1D9E47701E95C2FE00F01549 /* cross-hair-png-clipart-best-clipart-best-RvyiNi-clipart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9E47771E95C46200F01549 /* CustomOverlayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9E47781E95C46200F01549 /* CustomOverlayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,12 +318,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9E47671E95BF5000F01549 /* CustomOverlayViewController.swift in Sources */,
 				6B64C1211B84C8EB00288BE3 /* ItemsViewController.swift in Sources */,
 				6B64C1231B84C9C900288BE3 /* Item.swift in Sources */,
+				1D9E476A1E95BF8600F01549 /* CustomOverlayview.swift in Sources */,
 				6B64C1251B84CB3F00288BE3 /* ItemStore.swift in Sources */,
 				1D53B0001E88C33C00B5ED52 /* DetailViewController.swift in Sources */,
 				6B64C0F31B84C7C300288BE3 /* AppDelegate.swift in Sources */,
 				1DF314EC1E9345F000043B44 /* ImageStore.swift in Sources */,
+				1D9E477A1E95DB8400F01549 /* datePickerViewController.swift in Sources */,
 				6B64C1271B86265900288BE3 /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,10 +335,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9E47751E95C42D00F01549 /* CustomOverlayview.swift in Sources */,
 				6B64C1081B84C7C300288BE3 /* HomepwnerTests.swift in Sources */,
 				1D53B0031E88C3FB00B5ED52 /* Item.swift in Sources */,
 				1D53B0011E88C3D900B5ED52 /* DetailViewController.swift in Sources */,
+				1D9E477B1E95DB8400F01549 /* datePickerViewController.swift in Sources */,
 				1DF314ED1E93476300043B44 /* ImageStore.swift in Sources */,
+				1D9E47711E95C38D00F01549 /* CustomOverlayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,10 +349,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9E47761E95C42E00F01549 /* CustomOverlayview.swift in Sources */,
 				6B64C1131B84C7C300288BE3 /* HomepwnerUITests.swift in Sources */,
 				1D53B0041E88C3FC00B5ED52 /* Item.swift in Sources */,
 				1D53B0021E88C3D900B5ED52 /* DetailViewController.swift in Sources */,
+				1D9E477C1E95DB8400F01549 /* datePickerViewController.swift in Sources */,
 				1DF314EE1E93476400043B44 /* ImageStore.swift in Sources */,
+				1D9E47741E95C39200F01549 /* CustomOverlayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +414,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -388,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -416,6 +461,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -428,7 +474,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

@@ -4,12 +4,12 @@
 
 import UIKit
 
-class ItemsViewController: UITableViewController {
-    
+class ItemsViewController: UITableViewController
+{
     var itemStore: ItemStore!
     var imageStore: ImageStore!
  
-    @IBAction func addNewItem(_ sender: UIBarButtonItem)
+    func addNewItem(_ sender: UIBarButtonItem)
     {
         // Create a new Item and add it to the store
         let newItem = itemStore.createItem()
@@ -20,6 +20,8 @@ class ItemsViewController: UITableViewController {
             
             // Insert this new row into the table.
             tableView.insertRows(at: [indexPath], with: .automatic)
+            
+            print("AddNewItem being called. Creating a new item.")
         }
     }
     
@@ -29,6 +31,8 @@ class ItemsViewController: UITableViewController {
         
         navigationItem.leftBarButtonItem = editButtonItem
     }
+    
+    @IBOutlet var createItem: UIBarButtonItem!
     
     // Added From Book
     override func prepare(for seque: UIStoryboardSegue, sender: Any?)
@@ -46,6 +50,16 @@ class ItemsViewController: UITableViewController {
                     detailViewController.item = item
                     detailViewController.imageStore = imageStore
                 }
+            case "createItem"?:
+                // Call func to create new item
+                addNewItem(createItem)
+                let arrayCount = itemStore.allItems.count
+                print(arrayCount)
+                let item = itemStore.allItems[arrayCount - 1]
+                let createItemViewController = seque.destination as! DetailViewController
+                createItemViewController.item = item
+                createItemViewController.imageStore = imageStore
+                    print("Create Item in segue being used")
             default:
                 preconditionFailure("Unexpected segue identifier.")
         }
