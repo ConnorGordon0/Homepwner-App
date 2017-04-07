@@ -8,7 +8,7 @@ class ItemsViewController: UITableViewController
 {
     var itemStore: ItemStore!
     var imageStore: ImageStore!
- 
+    
     func addNewItem(_ sender: UIBarButtonItem)
     {
         // Create a new Item and add it to the store
@@ -59,12 +59,12 @@ class ItemsViewController: UITableViewController
                 let createItemViewController = seque.destination as! DetailViewController
                 createItemViewController.item = item
                 createItemViewController.imageStore = imageStore
-                    print("Create Item in segue being used")
+                print("Create Item in segue being used")
             default:
                 preconditionFailure("Unexpected segue identifier.")
         }
     }
-
+    
     // Added From Book
     override func viewWillAppear(_ animated: Bool)
     {
@@ -171,6 +171,7 @@ class ItemsViewController: UITableViewController
         var rowCount = 0
         if section == 0
         {
+            print("row count = ", rowCount)
             rowCount = itemStore.allItems.count
         }
         

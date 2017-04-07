@@ -184,15 +184,21 @@
                                             <action selector="takePicture:" destination="udF-uM-CTg" id="ni7-a4-QD5"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Clear" width="91.5" style="plain" id="HHs-87-fnI">
+                                    <barButtonItem title="Clear" width="85.5" style="plain" id="HHs-87-fnI">
                                         <connections>
                                             <action selector="deletePhoto:" destination="udF-uM-CTg" id="VSq-qi-vpX"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Change Date" width="181" style="plain" id="6H0-I8-yeA">
+                                    <barButtonItem title="Change Date" width="119" style="plain" id="6H0-I8-yeA">
                                         <connections>
                                             <action selector="changeDate:" destination="udF-uM-CTg" id="oiA-Pc-64Z"/>
                                             <segue destination="0Rs-8l-fcD" kind="show" identifier="showDate" id="I3B-Ci-aQ2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="cancel" id="JMA-HX-rnT">
+                                        <connections>
+                                            <action selector="cancel:" destination="udF-uM-CTg" id="eU2-Fu-tmM"/>
+                                            <segue destination="66W-v5-HZ5" kind="show" identifier="cancelItem" id="uZT-PL-S6B"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -214,6 +220,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="1By-iu-vm9" id="hVd-SY-kvS"/>
                         <outlet property="dateLabel" destination="tYp-E9-O6j" id="fKC-AR-FjT"/>
                         <outlet property="imageView" destination="aVD-SD-Tyz" id="h27-jx-2mk"/>
                         <outlet property="nameField" destination="sjf-Y7-gX0" id="mJ7-Mv-E0s"/>
@@ -281,6 +288,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="uZT-PL-S6B"/>
         <segue reference="XC4-2e-Gtc"/>
     </inferredMetricsTieBreakers>
 </document>

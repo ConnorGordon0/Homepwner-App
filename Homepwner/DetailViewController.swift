@@ -15,6 +15,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     @IBOutlet var valueField: UITextField!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var cancelButton: UIToolbar!
     
     var item: Item!
     {
@@ -23,15 +24,28 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         }
     }
     
+    
+    
     var imageStore: ImageStore!
+    var itemStore: ItemStore!
+    
+    //---------------------------------------------------------------------------------------------------------------
+    @IBAction func cancel(_ sender: UIBarButtonItem)
+    {
+        let count = itemStore.allItems.count
+        itemStore.allItems.remove(at: count)
+        performSegue(withIdentifier: "cancelItem", sender: cancel)
+    }
     
     // Performs the Segue into the dateChange viewController.
+    //---------------------------------------------------------------------------------------------------------------
     @IBAction func changeDate(_ sender: UIBarButtonItem)
     {
         performSegue(withIdentifier: "showDate", sender: changeDate)
     }
     
     // Passes the Date data to the next view controller to be changed
+    //---------------------------------------------------------------------------------------------------------------
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.identifier == "showDate"
@@ -42,12 +56,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     }
     
     // Delete a photo from the object
+    //---------------------------------------------------------------------------------------------------------------
     @IBAction func deletePhoto(_ sender: UIBarButtonItem)
     {
         imageView.image = nil
     }
     
-    
+    //---------------------------------------------------------------------------------------------------------------
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
         // Get picked image from info dictionary
@@ -64,6 +79,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         dismiss(animated: true, completion: nil)
     }
     
+    //---------------------------------------------------------------------------------------------------------------
     @IBAction func takePicture(_ sender: UIBarButtonItem)
     {
         let imagePicker = UIImagePickerController()
@@ -94,12 +110,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         present(imagePicker, animated: true, completion: nil)
     }
     
+    //---------------------------------------------------------------------------------------------------------------
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer)
     {
         view.endEditing(true)
     }
-
     
+    //---------------------------------------------------------------------------------------------------------------
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
@@ -108,6 +125,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         return formatter
     }()
     
+    //---------------------------------------------------------------------------------------------------------------
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -115,20 +133,44 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         return formatter
     }()
     
+    //---------------------------------------------------------------------------------------------------------------
     func textFieldShouldReturn(_ textClass: UITextField) -> Bool
     {
-        textClass.resignFirstResponder()
-        return true
+            textClass.resignFirstResponder()
+            return true
     }
     
+    // Clears the Text Field when called
+    //---------------------------------------------------------------------------------------------------------------
+    func textFieldDidEndEditing(_ textField: UITextField)
+    {
+        textField.text = ""
+    }
+    
+    //---------------------------------------------------------------------------------------------------------------
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
         
-        nameField.text = item.name
+        nameField.text         = item.name
         serialNumberField.text = item.serialNumber
-        valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
-        dateLabel.text = dateFormatter.string(from: item.dateCreated)
+        
+        // If Else Statement to clear the value and date fields on new items
+        if (item.valueInDollars != 0)
+        {
+            valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
+            dateLabel.text  = dateFormatter.string(from: item.dateCreated)
+            navigationController?.isNavigationBarHidden = false
+            
+            print("Value Field has a value")
+        }
+        else
+        {
+            print("value Field has no value")
+            textFieldDidEndEditing(valueField)
+            dateLabel.text = ""
+            navigationController?.isNavigationBarHidden = true
+        }
         
         // get the item Key
         let key = item.itemKey
@@ -139,6 +181,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         imageView.image = imageToDisplay
     }
     
+    //---------------------------------------------------------------------------------------------------------------
     override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear(animated)
@@ -146,39 +189,52 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         // Clear first responder
         view.endEditing(true)
         
-        // "Save" changes to item
-        item.name = nameField.text ?? ""
-        item.serialNumber = serialNumberField.text
-        
-        if let valueText = valueField.text, let value = numberFormatter.number(from: valueText)
+        if nameField.text == "" || valueField.text == ""
         {
-            item.valueInDollars = value.intValue
+            nameField.placeholder = "Please enter a name"
+            valueField.placeholder = "Please enter a value"
+            print("Please enter values")
         }
         else
         {
-            item.valueInDollars = 0
+            // "Save" changes to item
+            item.name = nameField.text ?? ""
+            item.serialNumber = serialNumberField.text
+            
+            if let valueText = valueField.text, let value = numberFormatter.number(from: valueText)
+            {
+                item.valueInDollars = value.intValue
+            }
+            else
+            {
+                item.valueInDollars = 0
+            }
         }
     }
 }
 
-//--------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------
 class textClass: UITextField, UITextFieldDelegate
 {
+    //---------------------------------------------------------------------------------------------------------------
     required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)!
         delegate = self
     }
     
+    //---------------------------------------------------------------------------------------------------------------
     override func becomeFirstResponder() -> Bool
     {
         super.becomeFirstResponder()
         self.borderStyle = UITextBorderStyle.line
+        
         print("Changes to Line")
         
         return true
     }
     
+    //---------------------------------------------------------------------------------------------------------------
     override func resignFirstResponder() -> Bool
     {
         super.resignFirstResponder()
