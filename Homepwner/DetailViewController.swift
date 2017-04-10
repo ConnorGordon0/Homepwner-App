@@ -15,7 +15,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     @IBOutlet var valueField: UITextField!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var cancelButton: UIToolbar!
+    @IBOutlet var cancelButton: UIBarButtonItem!
+    
     
     var item: Item!
     {
@@ -24,17 +25,16 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         }
     }
     
-    
-    
     var imageStore: ImageStore!
     var itemStore: ItemStore!
-    
-    //---------------------------------------------------------------------------------------------------------------
+
     @IBAction func cancel(_ sender: UIBarButtonItem)
     {
-        let count = itemStore.allItems.count
-        itemStore.allItems.remove(at: count)
-        performSegue(withIdentifier: "cancelItem", sender: cancel)
+        print("ItemStore in detail = ",itemStore)
+        //itemStore.removeItem(item)
+        //performSegue(withIdentifier: "cancelItem", sender: cancel)
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.popViewController(animated: true)
     }
     
     // Performs the Segue into the dateChange viewController.
@@ -142,7 +142,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     // Clears the Text Field when called
     //---------------------------------------------------------------------------------------------------------------
-    func textFieldDidEndEditing(_ textField: UITextField)
+    func textFieldDidBeginEditing(_ textField: UITextField)
     {
         textField.text = ""
     }
@@ -156,18 +156,26 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         serialNumberField.text = item.serialNumber
         
         // If Else Statement to clear the value and date fields on new items
-        if (item.valueInDollars != 0)
+        if (item.valueInDollars != 0) || item.dateCreated != nil
         {
             valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
-            dateLabel.text  = dateFormatter.string(from: item.dateCreated)
-            navigationController?.isNavigationBarHidden = false
+            dateLabel.text  = dateFormatter.string(from: item.dateCreated!)
+            
+            if nameField.text == "" || valueField.text == ""
+            {
+                navigationController?.isNavigationBarHidden = true
+            }
+            else
+            {
+                navigationController?.isNavigationBarHidden = false
+            }
             
             print("Value Field has a value")
         }
         else
         {
             print("value Field has no value")
-            textFieldDidEndEditing(valueField)
+            textFieldDidBeginEditing(valueField)
             dateLabel.text = ""
             navigationController?.isNavigationBarHidden = true
         }
@@ -188,27 +196,18 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
         // Clear first responder
         view.endEditing(true)
+
+        // "Save" changes to item
+        item.name = nameField.text ?? ""
+        item.serialNumber = serialNumberField.text
         
-        if nameField.text == "" || valueField.text == ""
+        if let valueText = valueField.text, let value = numberFormatter.number(from: valueText)
         {
-            nameField.placeholder = "Please enter a name"
-            valueField.placeholder = "Please enter a value"
-            print("Please enter values")
+            item.valueInDollars = value.intValue
         }
         else
         {
-            // "Save" changes to item
-            item.name = nameField.text ?? ""
-            item.serialNumber = serialNumberField.text
-            
-            if let valueText = valueField.text, let value = numberFormatter.number(from: valueText)
-            {
-                item.valueInDollars = value.intValue
-            }
-            else
-            {
-                item.valueInDollars = 0
-            }
+            item.valueInDollars = 0
         }
     }
 }

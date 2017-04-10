@@ -20,7 +20,6 @@ class ItemsViewController: UITableViewController
             
             // Insert this new row into the table.
             tableView.insertRows(at: [indexPath], with: .automatic)
-            
             print("AddNewItem being called. Creating a new item.")
         }
     }
@@ -169,10 +168,15 @@ class ItemsViewController: UITableViewController
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         var rowCount = 0
+
         if section == 0
         {
             print("row count = ", rowCount)
             rowCount = itemStore.allItems.count
+        }
+        else
+        {
+            rowCount = 0
         }
         
         return rowCount
@@ -188,7 +192,8 @@ class ItemsViewController: UITableViewController
     
     // Names the Sections respective of their number values
     //----------------------------------------------------------------------------------------------------
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
         if section == 0
         {
             return "Items"

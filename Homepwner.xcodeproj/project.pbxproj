@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -62,7 +62,7 @@
 
 /* Begin PBXFileReference section */
 		1D4B31AE1E7F919900172FE1 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../Desktop/background.jpg; sourceTree = "<group>"; };
-		1D53AFFF1E88C33C00B5ED52 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1D53AFFF1E88C33C00B5ED52 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1D9E47651E95BF5000F01549 /* CustomOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomOverlayViewController.swift; path = ../CustomOverlayViewController.swift; sourceTree = "<group>"; };
 		1D9E47661E95BF5000F01549 /* CustomOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomOverlayViewController.xib; path = ../CustomOverlayViewController.xib; sourceTree = "<group>"; };
 		1D9E47691E95BF8600F01549 /* CustomOverlayview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayview.swift; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 				};
 			};
 			buildConfigurationList = 6B64C0EA1B84C7C300288BE3 /* Build configuration list for PBXProject "Homepwner" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (

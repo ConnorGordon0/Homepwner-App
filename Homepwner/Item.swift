@@ -7,7 +7,6 @@ import UIKit
 
 class Item: NSObject, NSCoding
 {
-    
     func encode(with aCoder: NSCoder)
     {
         aCoder.encode(name, forKey: "name")
@@ -21,7 +20,7 @@ class Item: NSObject, NSCoding
     required init( coder aDecoder: NSCoder)
     {
         name = aDecoder.decodeObject( forKey: "name") as! String
-        dateCreated = aDecoder.decodeObject( forKey: "dateCreated") as! Date
+        dateCreated = aDecoder.decodeObject( forKey: "dateCreated") as? Date
         itemKey = aDecoder.decodeObject( forKey: "itemKey") as! String
         serialNumber = aDecoder.decodeObject( forKey: "serialNumber") as! String?
         
@@ -29,29 +28,21 @@ class Item: NSObject, NSCoding
         
         super.init()
     }
-    
+ 
     var name: String
     var valueInDollars: Int
     var serialNumber: String?
-    var dateCreated: Date
+    var dateCreated: Date?
     let itemKey: String
     
-    init(name: String, serialNumber: String?, valueInDollars: Int) {
+    init(name: String, serialNumber: String?, valueInDollars: Int)
+    {
         self.name = name
         self.serialNumber = serialNumber
         self.valueInDollars = valueInDollars
-        self.dateCreated = Date()
+        self.dateCreated = nil
         self.itemKey = UUID().uuidString
-    }
-   
-    convenience init(create: Bool = false)
-    {
-        if create {
-            
-            self.init(name: "", serialNumber: nil, valueInDollars: 0)
-        }
-        else {
-            self.init(name: "", serialNumber: nil, valueInDollars: 0)
-        }
+        
+        super.init()
     }
 }

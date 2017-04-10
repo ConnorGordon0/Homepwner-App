@@ -22,7 +22,9 @@ class datePickerViewController: UIViewController, UINavigationControllerDelegate
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewDidLoad()
-        print("Item = ", item.dateCreated) // Tells me what the date
+        print("Item = ", item.dateCreated as Any) // Tells me what the date
+        navigationController?.isNavigationBarHidden = false
+
     }
     
     // Saves the Date chosen when page is sent back to previous view
@@ -30,6 +32,7 @@ class datePickerViewController: UIViewController, UINavigationControllerDelegate
     {
         super.viewWillDisappear(animated)
         item.dateCreated = datePicker.date
+
     }
     
 }

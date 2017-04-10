@@ -49,16 +49,20 @@ class ItemStore
   
     @discardableResult func createItem() -> Item
     {
-       let newItem = Item(create: true)
+        let newItem = Item(name: "", serialNumber: "", valueInDollars: 0)
         
         allItems.append(newItem)
+        
+        print("New Item = ",newItem)
         
         return newItem
     }
  
-    func removeItem(_ item: Item) {
+    func removeItem(_ item: Item)
+    {
         if let index = allItems.index(of: item)
         {
+            print("Item === ",item)
             allItems.remove(at: index)
         }
     }

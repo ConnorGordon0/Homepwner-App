@@ -96,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mjP-l8-EHG">
-                                <rect key="frame" x="16" y="72" width="343" height="543"/>
+                                <rect key="frame" x="16" y="28" width="343" height="587"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a7S-Ff-biD">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="134.5"/>
@@ -168,12 +168,12 @@
                                         </constraints>
                                     </stackView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="aVD-SD-Tyz">
-                                        <rect key="frame" x="0.0" y="142.5" width="343" height="400.5"/>
+                                        <rect key="frame" x="0.0" y="142.5" width="343" height="444.5"/>
                                     </imageView>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="fillEqually"/>
                             </stackView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1By-iu-vm9">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1By-iu-vm9" userLabel="bottomBar">
                                 <rect key="frame" x="16" y="623" width="343" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="7NA-63-Mp2"/>
@@ -197,8 +197,7 @@
                                     </barButtonItem>
                                     <barButtonItem systemItem="cancel" id="JMA-HX-rnT">
                                         <connections>
-                                            <action selector="cancel:" destination="udF-uM-CTg" id="eU2-Fu-tmM"/>
-                                            <segue destination="66W-v5-HZ5" kind="show" identifier="cancelItem" id="uZT-PL-S6B"/>
+                                            <action selector="cancel:" destination="udF-uM-CTg" id="VBD-px-tql"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -220,7 +219,7 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="1By-iu-vm9" id="hVd-SY-kvS"/>
+                        <outlet property="cancelButton" destination="JMA-HX-rnT" id="Qzt-oG-qZO"/>
                         <outlet property="dateLabel" destination="tYp-E9-O6j" id="fKC-AR-FjT"/>
                         <outlet property="imageView" destination="aVD-SD-Tyz" id="h27-jx-2mk"/>
                         <outlet property="nameField" destination="sjf-Y7-gX0" id="mJ7-Mv-E0s"/>
@@ -288,7 +287,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uZT-PL-S6B"/>
         <segue reference="XC4-2e-Gtc"/>
     </inferredMetricsTieBreakers>
 </document>
